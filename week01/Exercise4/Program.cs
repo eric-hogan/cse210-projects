@@ -13,7 +13,6 @@ class Program
         Console.WriteLine("Enter a list of numbers type 0 when finished.");
         int sumNum = 0;
         int largeNum = 0;
-        int avgNum = 0;
         int smallNum = 9999;
 
         do
@@ -32,9 +31,7 @@ class Program
         {
 
 
-            int listLength = numbers.Count;
             sumNum += number;
-            avgNum = sumNum / listLength;
 
             if (number > largeNum)
             {
@@ -50,11 +47,11 @@ class Program
             }
 
         }
-
+        float avgNum = ((float)sumNum) / numbers.Count;
         numbers.Sort();
 
         Console.WriteLine($"The sum is: {sumNum}");
-        Console.WriteLine($"The averatge is: {avgNum}");
+        Console.WriteLine($"The average is: {avgNum}");
         Console.WriteLine($"The largest number is: {largeNum}");
         Console.WriteLine($"The smallest positive number is {smallNum}");
 
