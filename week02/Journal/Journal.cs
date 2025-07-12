@@ -8,7 +8,7 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
-       
+        _entries.Add(newEntry);
     }
 
     public void DisplayAll(){
@@ -23,7 +23,15 @@ public class Journal
     public void SaveToFile(string file)
     {
         Console.Write("Enter the file name: ");
-        string filename = Console.ReadLine();
+        string fileName = Console.ReadLine();
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputFile.WriteLine($"{entry._date}||{entry._promptText}||{entry._entryText}");
+            }
+            Console.WriteLine("Journal has been saved");
+        }  
 
         
     }
@@ -31,6 +39,19 @@ public class Journal
     {
         Console.Write("Enter the file name: ");
         string filename = Console.ReadLine();
+        string[] lines = File.ReadAllLines(filename);
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("||");
+
+            Console.WriteLine(parts[0]);
+            Console.WriteLine(parts[1]);
+            Console.WriteLine(parts[2]);
+
+
+        } 
+
     
     }
 }
