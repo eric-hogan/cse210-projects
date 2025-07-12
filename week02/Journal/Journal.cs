@@ -1,4 +1,5 @@
 using System.Configuration.Assemblies;
+using System.Formats.Asn1;
 using System.IO;
 
 public class Journal
@@ -24,14 +25,17 @@ public class Journal
     {
         Console.Write("Enter the file name: ");
         string fileName = Console.ReadLine();
+        string delimiter = "||";
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
+            outputFile.WriteLine($"sep={delimiter}");
             foreach (Entry entry in _entries)
             {
                 outputFile.WriteLine($"{entry._date}||{entry._promptText}||{entry._entryText}");
             }
             Console.WriteLine("Journal has been saved");
         }  
+
 
         
     }
