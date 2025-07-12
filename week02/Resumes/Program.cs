@@ -24,8 +24,8 @@ class Program
         // job2.DisplayJobInfo();
 
         Resume myResume = new Resume();
-        myResume._firstName = ("Eric");
-        myResume._lastName = ("Hogan");
+        myResume._firstName = "Eric";
+        myResume._lastName = "Hogan";
         myResume._listOfJobs.Add(job1);
         myResume._listOfJobs.Add(job2);
 
