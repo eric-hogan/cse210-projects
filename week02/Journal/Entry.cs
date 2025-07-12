@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
@@ -8,7 +9,9 @@ public class Entry
 
     public void Display()
     {
-
+        Console.WriteLine($"{_date}");
+        Console.WriteLine($"{_promptText}");
+        Console.WriteLine($"{_entryText}");
     }
 
 }
