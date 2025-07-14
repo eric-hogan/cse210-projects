@@ -1,6 +1,10 @@
 using System;
 using System.Runtime.InteropServices;
 
+/// <summary>
+/// For the showing creativity portion of this assignement I implemented code in the Jouranl.cs file that facilated the display of a jouranl as a CSV file. 
+/// </summary>
+
 class Program
 {
     static void Main(string[] args)
@@ -9,7 +13,7 @@ class Program
         string dateAsText = currentDate.ToShortDateString();
 
         int selection = 0;
-        
+
         Journal theJournal = new Journal();
         do
         {
