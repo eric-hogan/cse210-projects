@@ -3,28 +3,20 @@ public class Fraction
     private int _top;
     private int _bottom;
 
-    public int GetTopNumber()
-    {
-        return _top;
-    }
-
-    public void SetTopNumber (int topNum)
-    {
-        _top = topNum;
-    }
 
     public Fraction()
     {
+
         _top = 1;
         _bottom = 1;
-        Console.WriteLine($"{_top} / {_bottom}");
+
     }
 
-    public Fraction (int topNum)
+    public Fraction(int wholeNumber)
     {
-        _top = topNum;
+        _top = wholeNumber;
         _bottom = 1;
-        Console.WriteLine($"{_top} / {_bottom}");
+
 
     }
 
@@ -32,8 +24,19 @@ public class Fraction
     {
         _top = topNum;
         _bottom = bottomNum;
-        Console.WriteLine($"{_top} / {_bottom}");
-        
+
+
+    }
+
+    public string GetFractionString()
+    {
+        string fractionString = $"{_top} / {_bottom}";
+        return fractionString;
+    }
+
+    public double GetDecimalValue()
+    {
+        return (double)_top / (double)_bottom;
     }
 }
 
