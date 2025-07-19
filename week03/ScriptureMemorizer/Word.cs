@@ -6,8 +6,7 @@ public class Word
     public Word(string text)
     {
         _text = text;
-
-        Console.WriteLine(_text);
+     
     }
 
     public void Hide()
