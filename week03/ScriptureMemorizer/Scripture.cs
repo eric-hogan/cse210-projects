@@ -4,7 +4,7 @@ using System.Text;
 public class Scripture
 {
     Reference _reference;
-    List<Word> _words = new List<Word>();
+    public List<Word> _words = new List<Word>();
 
     public Scripture(Reference reference, string text)
     {
@@ -28,23 +28,36 @@ public class Scripture
     public void HideRandomWords(int numberToHide)
     {
 
+        for (int i = 0; i < numberToHide; i++)
+        {
+
+            Random random = new Random();
+            int randomIndex = random.Next(_words.Count);
+            Word randomWord = _words[randomIndex];
+            randomWord.Hide();
+    
+
+        } 
+        
     }
 
     public string GetDisplayText()
     {
         StringBuilder displaytext = new StringBuilder();
-        
-        foreach(Word word in _words)
+
+        foreach (Word word in _words)
         {
             displaytext.Append($"{word} ");
         }
-        return "program finished";
+
+        return displaytext.ToString();
+
     
     }
 
     public bool IsCompletelyHidden()
     {
-        
+
         return false;
     }
 }
