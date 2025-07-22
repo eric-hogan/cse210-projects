@@ -11,7 +11,19 @@ public class Word
 
     public void Hide()
     {
+<<<<<<< HEAD
         _isHidden = true;
+=======
+
+        // Random random = new Random();
+        // randomIndex = random.Next(_words.Count);
+        // Word randomWord = _words[randomIndex];
+        // string randomWordAsString = randomWord.ToString();
+        // randomWordAsString = "_";
+
+        Console.WriteLine("words hidden");
+
+>>>>>>> 5128cea3be34a88e51c9bf4ab3e4b3d1180f05ea
     }
 
     public void Show()
