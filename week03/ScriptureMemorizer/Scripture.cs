@@ -5,17 +5,13 @@ using System.Text;
 public class Scripture
 {
     Reference _reference;
-    public List<Word> _words = new List<Word>();
+    List<Word> _words = new List<Word>();
 
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
         Console.WriteLine(reference);
         string[] words = text.Split(" ");
-        // foreach (string t in words)
-        // {
-        //     Console.WriteLine(t);
-        // }
 
         foreach (string i in words)
         {
