@@ -24,7 +24,7 @@ public class Reference
 
     public string GetDisplayText()
     {
-        if  (_endVerse == 0)
+        if (_endVerse == 0)
         {
             return $"{_book} {_chapter}: {_verse}";
         }
@@ -33,5 +33,10 @@ public class Reference
         {
             return $"{_book} {_chapter}: {_verse}-{_endVerse}";
         }
+    }
+
+    public override string ToString()
+    {
+        return GetDisplayText().ToString();
     }
 }

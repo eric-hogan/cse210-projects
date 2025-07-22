@@ -1,3 +1,4 @@
+using System.Formats.Asn1;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
@@ -20,31 +21,59 @@ public class Scripture
         {
             Word newWord = new Word(i);
             _words.Add(newWord);
-            
-            }
+
+        }
 
     }
 
     public void HideRandomWords(int numberToHide)
     {
+        Random random = new Random();
+        int hiddenWord = 0;
 
+        while (hiddenWord < numberToHide)
+        {
+            int index = random.Next(_words.Count);
+            Word word = _words[index];
+
+            if (!word.IsHidden())
+            {
+                word.Hide();
+                hiddenWord++;
+            }
+
+            Console.Clear();
+        }
     }
 
     public string GetDisplayText()
     {
         StringBuilder displaytext = new StringBuilder();
-        
-        foreach(Word word in _words)
+
+        foreach (Word word in _words)
         {
-            displaytext.Append($"{word} ");
+            displaytext.Append($"{word.GetDisplayText()} ");
         }
-        return "program finished";
-    
+
+
+        return $"{displaytext}";
+
     }
+    
 
     public bool IsCompletelyHidden()
     {
-        
-        return false;
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+
+        }
+
+        return true;
+
+
     }
 }
