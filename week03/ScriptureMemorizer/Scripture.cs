@@ -31,7 +31,6 @@ public class Scripture
         Random random = new Random();
         int hiddenWord = 0;
 
-<<<<<<< HEAD
         while (hiddenWord < numberToHide)
         {
             int index = random.Next(_words.Count);
@@ -45,19 +44,6 @@ public class Scripture
 
             Console.Clear();
         }
-=======
-        for (int i = 0; i < numberToHide; i++)
-        {
-
-            Random random = new Random();
-            int randomIndex = random.Next(_words.Count);
-            Word randomWord = _words[randomIndex];
-            randomWord.Hide();
-    
-
-        } 
-        
->>>>>>> 5128cea3be34a88e51c9bf4ab3e4b3d1180f05ea
     }
 
     public string GetDisplayText()
@@ -69,21 +55,14 @@ public class Scripture
             displaytext.Append($"{word.GetDisplayText()} ");
         }
 
-<<<<<<< HEAD
 
         return $"{displaytext}";
 
-=======
-        return displaytext.ToString();
-
-    
->>>>>>> 5128cea3be34a88e51c9bf4ab3e4b3d1180f05ea
     }
     
 
     public bool IsCompletelyHidden()
     {
-<<<<<<< HEAD
         foreach (Word word in _words)
         {
             if (!word.IsHidden())
@@ -96,9 +75,5 @@ public class Scripture
         return true;
 
 
-=======
-
-        return false;
->>>>>>> 5128cea3be34a88e51c9bf4ab3e4b3d1180f05ea
     }
 }
