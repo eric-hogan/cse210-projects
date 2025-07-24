@@ -13,6 +13,11 @@ public class Customer
 
     }
 
+    public string GetShippingInfo()
+    {
+        return $"{_firstName} {_lastName}\n{_address.GetShippingAddress()}";
+    }
+
     public bool LiveInUsa()
     {
         _inUsa = _address.InUSA();

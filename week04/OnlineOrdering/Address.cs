@@ -16,7 +16,7 @@ public class Address
 
     public string GetShippingAddress()
     {
-        return "string";
+        return $"{_street}\n{_city}, {_state}, {_country}";
     }
 
     public bool InUSA()
